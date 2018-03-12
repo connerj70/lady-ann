@@ -26,25 +26,11 @@ class Container extends Component {
     }
 
     render() {
-        // let tagsToRender = this.props.tags
-        //     ? this.props.tags.map((val, i) => {
-        //           return (
-        //               <div key={i} className="tag-wrapper">
-        //                   {val}
-        //               </div>
-        //           );
-        //       })
-        //     : null;
         return (
             <div className="container-comp">
                 <div className="container-comp_header">
                     <div className="container-comp_sub-header">
                         <h1>{this.props.title}</h1>
-                        <div className="published-by">
-                            {this.props.category === "relationship"
-                                ? "Lady Ann."
-                                : "Pankaata"}
-                        </div>
                         <div className="published-date">
                             <div>{this.props.creation_date}</div>
                             <div style={{ marginTop: "5px" }}>

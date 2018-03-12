@@ -15,7 +15,7 @@ class Post extends Component {
             title: "",
             type: "",
             url: "",
-            category: "",
+            category: "relationship",
             tags: "",
             loggedIn: false
         };
@@ -174,35 +174,6 @@ class Post extends Component {
                                     placeholder="new article url"
                                 />
                             )}
-                            <fieldset>
-                                <label>Category</label>
-                                <select
-                                    name="category"
-                                    onChange={e => this.handleChange(e)}
-                                >
-                                    <option value={null}>
-                                        Select An Option
-                                    </option>
-                                    <option value="news">Worthy News</option>
-                                    <option value="motivational">
-                                        Motivational Monday
-                                    </option>
-                                    <option value="food">Food</option>
-                                    <option value="relationship">
-                                        Relationship
-                                    </option>
-                                    <option value="animal">Animal World</option>
-                                    <option value="entertainment">
-                                        Entertainment
-                                    </option>
-                                    <option value="thousand">
-                                        Thousand Words
-                                    </option>
-                                    <option value="miscellaneous">
-                                        Miscellaneous
-                                    </option>
-                                </select>
-                            </fieldset>
                             <fieldset>
                                 <label>Tags</label>
                                 <input

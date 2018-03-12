@@ -1,1 +1,1 @@
-select count(*) from posts;
+select count(*) from posts where category = 'relationship';

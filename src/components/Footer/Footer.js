@@ -8,7 +8,7 @@ class Footer extends Component {
                 <div className="footer_inner-container">
                     <h2>About Us</h2>
                     <ul>
-                        <li>About Pankaata</li>
+                        <li>About Lady Ann</li>
                         <li>Careers</li>
                         <li>Contact Us</li>
                     </ul>

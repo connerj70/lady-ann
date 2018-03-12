@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./Navbar.css";
-import logo from "../../assets/pankaata-final.svg";
+import logo from "../../assets/lady-ann-3.svg";
 import SecondaryNav from "./SecondaryNav/SecondaryNav.js";
 import { Link } from "react-router-dom";
-import LadyAnnNav from "./LadyAnnNav/LadyAnnNav";
 import CustomForm from "../../components/CustomForm/CustomForm";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import axios from "axios";
@@ -110,44 +109,28 @@ class Navbar extends Component {
                     }
                 >
                     <ul>
-                        <Link to="/motivational">
-                            <li className="navbar_dropdown">
-                                MotivationalMonday
-                            </li>
-                        </Link>
-                        <Link to="/worthynews">
-                            <li className="navbar_dropdown">WorthyNews</li>
-                        </Link>
-                        <Link to="/food">
-                            <li className="navbar_dropdown">FoodPorn</li>
-                        </Link>
-                        <Link to="/animal">
-                            <li className="navbar_dropdown">AnimalLovers</li>
-                        </Link>
-                        <Link to="/thousandwords">
-                            <li className="navbar_dropdown">ThousandWords</li>
-                        </Link>
-                        <Link to="/entertainment">
-                            <li className="navbar_dropdown">Entertainment</li>
-                        </Link>
-
                         <Link to="/relationships/videos">
-                            <li className="navbar_dropdown">Relationship</li>
+                            <li className="navbar_dropdown">Videos</li>
+                        </Link>
+                        <Link to="/relationships/letters">
+                            <li className="navbar_dropdown">Letters</li>
+                        </Link>
+                        <Link to="/relationships/email">
+                            <li className="navbar_dropdown">Email Lady. Ann</li>
+                        </Link>
+                        <Link to="/relationships/about">
+                            <li className="navbar_dropdown">About Lady. Ann</li>
                         </Link>
                     </ul>
                 </div>
                 {this.props.secondaryNav ? (
                     <div className="navbar_secondary-nav-container">
-                        {!this.props.ladyAnn ? (
-                            <SecondaryNav
-                                handleSearchTerm={this.props.handleSearchTerm}
-                                handleSearchEnter={this.props.handleSearchEnter}
-                                clearSearch={this.props.clearSearch}
-                                searchTerm={this.props.searchTerm}
-                            />
-                        ) : (
-                            <LadyAnnNav />
-                        )}
+                        <SecondaryNav
+                            handleSearchTerm={this.props.handleSearchTerm}
+                            handleSearchEnter={this.props.handleSearchEnter}
+                            clearSearch={this.props.clearSearch}
+                            searchTerm={this.props.searchTerm}
+                        />
                     </div>
                 ) : null}
 

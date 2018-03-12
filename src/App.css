@@ -13,10 +13,10 @@ body {
 
 :root {
     --body-background: #edf0f1;
-    --navbar-background: #2f3e4e;
-    --second-font-color: #bec2c7;
+    --navbar-background: #fff;
+    --second-font-color: #333333;
     --third-font: #788289;
-    --secondary-highlights: #26313f;
+    --secondary-highlights: #ea8b88;
     --blue: #1b75bc;
     --yellow: #fbb040;
     --red: #ef4136;

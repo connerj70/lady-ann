@@ -1,1 +1,1 @@
-select * from posts where category = 'relationship' order by post_id desc;
+select * from posts where category = 'relationship' and type = 'youtube' order by post_id desc;

@@ -1,12 +1,12 @@
 .secondary-nav {
     height: 60px;
     width: 100%;
-    background-color: #fff;
+    background-color: #ea8b88;
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
     align-items: center;
-    color: var(--second-font-color);
+    color: #fff;
     box-shadow: 1px 3px 5px #d3d3d3;
 }
 
@@ -39,6 +39,8 @@
     width: 90%;
     z-index: 2;
     margin-left: 5px;
+    background-color: #ea8b88;
+    color: #fff;
 }
 
 .secondary-nav_hide {
