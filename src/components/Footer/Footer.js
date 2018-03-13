@@ -37,7 +37,7 @@ class Footer extends Component {
                         typesetting industry. Lorem Ipsum has been the
                         industry's standard dummy text ever since the 1500s,
                     </p>
-                    <div classname="footer_privacy-and-terms">
+                    <div className="footer_privacy-and-terms">
                         <div className="footer_privacy-and-terms-div">
                             Pankaata © 2018.
                         </div>
