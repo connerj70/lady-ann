@@ -57,7 +57,7 @@
 .navbar_dropdown {
     background-color: var(--navbar-background);
     padding: 15px 20px;
-    border-top: 1px solid var(--secondary-highlights);
+    border-bottom: 1px solid #ea8b884b;
     color: var(--second-font-color);
     text-align: left;
     z-index: 10;
@@ -72,4 +72,42 @@
     border-radius: 5px;
     padding: 10px 15px;
     z-index: 20;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .menu-drop {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+        margin-left: 20%;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .desktop-nav ul li {
+        border: none;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .navbar_inner-wrapper {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

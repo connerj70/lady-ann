@@ -33,37 +33,48 @@ class SecondaryNav extends Component {
     render() {
         return (
             <div className="secondary-nav">
-                {this.state.search ? (
-                    <div className="secondary-nav_search-open-div">
-                        <div>
-                            <i className="fas fa-search" />
-                            <input
-                                value={this.props.searchTerm}
-                                onKeyPress={e => this.handleKeyPress(e)}
-                                onChange={e =>
-                                    this.props.handleSearchTerm(e.target.value)
-                                }
-                                autoFocus="autoFocus"
-                                className="secondary-nav-input"
-                                type="text"
-                            />
+                <div className="secondary-nav-wrapper">
+                    {this.state.search ? (
+                        <div className="secondary-nav_search-open-div">
+                            <div>
+                                <i className="fas fa-search" />
+                                <input
+                                    value={this.props.searchTerm}
+                                    onKeyPress={e => this.handleKeyPress(e)}
+                                    onChange={e =>
+                                        this.props.handleSearchTerm(
+                                            e.target.value
+                                        )
+                                    }
+                                    autoFocus="autoFocus"
+                                    className="secondary-nav-input"
+                                    type="text"
+                                />
+                            </div>
+                            <div>
+                                <div
+                                    style={{ marginRight: "10px" }}
+                                    onClick={() => this.handleSearchClear()}
+                                >
+                                    Clear
+                                </div>
+                                <div onClick={() => this.handleSearchOpen()}>
+                                    x
+                                </div>
+                            </div>
                         </div>
-                        <span onClick={() => this.handleSearchClear()}>
-                            Clear
-                        </span>
-                        <span onClick={() => this.handleSearchOpen()}>x</span>
-                    </div>
-                ) : (
-                    <div className="secondary-nav_initial-search">
-                        <div>HOME</div>
-                        <div
-                            className="secondary-nav_search"
-                            onClick={() => this.handleSearchOpen()}
-                        >
-                            <i className="fas fa-search" />
+                    ) : (
+                        <div className="secondary-nav_initial-search">
+                            <div />
+                            <div
+                                className="secondary-nav_search"
+                                onClick={() => this.handleSearchOpen()}
+                            >
+                                <i className="fas fa-search" />
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         );
     }

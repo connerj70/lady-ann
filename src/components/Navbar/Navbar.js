@@ -74,14 +74,36 @@ class Navbar extends Component {
                     </div>
                 ) : null}
                 <div className="navbar">
-                    <div className="navbar_logo">
-                        <Link to="/">
-                            <img
-                                className="pankaata-logo"
-                                alt="logo"
-                                src={logo}
-                            />
-                        </Link>
+                    <div className="navbar_inner-wrapper">
+                        <div className="navbar_logo">
+                            <Link to="/">
+                                <img
+                                    className="pankaata-logo"
+                                    alt="logo"
+                                    src={logo}
+                                />
+                            </Link>
+                        </div>
+                        <div className="desktop-nav">
+                            <ul>
+                                <Link to="/relationships/videos">
+                                    <li className="navbar_dropdown">Videos</li>
+                                </Link>
+                                <Link to="/relationships/letters">
+                                    <li className="navbar_dropdown">Letters</li>
+                                </Link>
+                                <Link to="/relationships/email">
+                                    <li className="navbar_dropdown">
+                                        Email Lady. Ann
+                                    </li>
+                                </Link>
+                                <Link to="/relationships/about">
+                                    <li className="navbar_dropdown">
+                                        About Lady. Ann
+                                    </li>
+                                </Link>
+                            </ul>
+                        </div>
                     </div>
                     <div
                         className="menu-drop"
