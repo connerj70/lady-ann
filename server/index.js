@@ -29,6 +29,21 @@ app.use(
 app.use((req, res, next) => initialSession(req, res, next));
 
 //ADMIN ENDPOINTS
+
+app.post("/api/logout", function(req, res) {
+    req.session.destroy();
+    res.status(200).send("Log out");
+});
+
+app.post("/api/admin/password", function(req, res) {
+    const db = req.app.get("db");
+    db
+        .change_password([req.body.newPass1, req.session.user.username])
+        .then(resp => {
+            res.status(200).send(resp);
+        });
+});
+
 app.post("/api/admin", function(req, res) {
     const db = req.app.get("db");
     db

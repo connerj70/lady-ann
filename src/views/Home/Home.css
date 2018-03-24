@@ -1,5 +1,5 @@
 .media-wrapper {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     display: flex;
 }
@@ -8,8 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    width: 100%;
+    margin: 20px auto;
+    width: 98%;
 }
 
 .new-post-button-container button {
@@ -17,8 +17,9 @@
     background-color: var(--blue);
     color: #fff;
     border: none;
-    padding: 10px 25px;
+    padding: 5px 10px;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 .media-wrapper iframe {
@@ -40,6 +41,10 @@
     min-height: 100vh;
 }
 
+.left-post-container {
+    padding-top: 30px;
+}
+
 .home_loading {
     margin: 20px auto;
     text-align: center;
@@ -55,13 +60,70 @@
     border-radius: 5px;
     color: #fff;
     font-size: 16px;
+    margin-bottom: 60px;
 }
 
 .return-to-top-button {
     padding: 10px 20px;
     background-color: var(--blue);
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 100px;
     color: #fff;
     border-radius: 5px;
+}
+
+.home_inner-posts-sidebar-container {
+    max-width: 1200px;
+}
+
+.home_sidebar {
+    display: none;
+}
+
+@media (min-width: 680px) {
+    .new-post-button-container button {
+        padding: 15px 25px;
+        font-size: 12px;
+    }
+    .left-post-container {
+        /* padding-right: 80px; */
+        width: 50%;
+        flex-grow: 0.5;
+        padding-top: 30px;
+    }
+    .home_inner-posts-sidebar-container {
+        display: flex;
+        justify-content: space-around;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .home_sidebar {
+        width: 30%;
+        height: 85vh;
+        position: sticky;
+        top: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+        max-width: 300px;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+@media (min-width: 880px) {
+    .left-post-container {
+        border-right: 1px solid #d3d3d3;
+        padding-right: 80px;
+    }
+}
+
+@media (min-width: 1050px) {
+    .home_inner-posts-sidebar-container {
+        width: 95%;
+    }
+    /* .left-post-container {
+        border-right: 1px solid #d3d3d3;
+        padding-right: 80px;
+    } */
 }

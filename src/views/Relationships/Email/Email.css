@@ -1,5 +1,7 @@
 .lady-ann-email {
     min-height: calc(100vh - 220px);
+    max-width: 900px;
+    margin: 50px auto;
 }
 
 .email_sub-container {

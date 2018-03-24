@@ -83,6 +83,7 @@
     .footer_inner-container ul li {
         margin-top: 10px;
         width: 100%;
+        text-align: left;
     }
 
     .footer_privacy-and-terms {

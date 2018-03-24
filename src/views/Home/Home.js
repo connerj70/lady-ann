@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "axios";
-import { TwitterTweetEmbed } from "react-twitter-embed";
+// import { TwitterTweetEmbed } from "react-twitter-embed";
 import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
 import FacebookProvider, { EmbeddedPost } from "react-facebook";
@@ -9,6 +9,10 @@ import "./Home.css";
 import Container from "../../components/Container/Container";
 import { Link } from "react-router-dom";
 import Ad from "../../components/Ad/Ad";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import TweetEmbed from "react-tweet-embed";
+import ReactGA from "react-ga";
+// import NewsCard from "../../components/NewsCard/NewsCard";
 
 class Home extends Component {
     constructor(props) {
@@ -19,12 +23,14 @@ class Home extends Component {
             loggedIn: false,
             searchTerm: "",
             instagramTest: "",
-            totalPosts: null
+            totalPosts: null,
+            loading: true
         };
         this.handleSearchTerm = this.handleSearchTerm.bind(this);
         this.handleSearchEnter = this.handleSearchEnter.bind(this);
         this.scrollFnc = this.scrollFnc.bind(this);
         this.clearSearchTerm = this.clearSearchTerm.bind(this);
+        this.handleTagClick = this.handleTagClick.bind(this);
     }
 
     scrollFnc(e) {
@@ -56,10 +62,10 @@ class Home extends Component {
                             .then(resp => {
                                 var posts = this.state.posts.slice();
                                 posts = [...posts, ...resp.data];
-                                posts.splice(posts.length - 2, 0, {
-                                    type: "ad",
-                                    title: "Ad"
-                                });
+                                // posts.splice(1, 0, {
+                                //     type: "ad",
+                                //     title: "Ad"
+                                // });
                                 this.setState({ posts: posts });
                             });
                     }
@@ -69,15 +75,16 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        var addScript = document.createElement("script");
-        addScript.setAttribute(
-            "src",
-            "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        );
-        document.body.appendChild(addScript);
-        window.addEventListener("scroll", e => this.scrollFnc(e));
+        // var addScript = document.createElement("script");
+        // addScript.setAttribute(
+        //     "src",
+        //     "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        // );
+        // document.body.appendChild(addScript);
+        window.addEventListener("scroll", e => this.scrollFnc(e), {
+            passive: true
+        });
         axios.get("/api/get-count").then(resp => {
-            console.log(resp);
             this.setState({
                 count: +resp.data[0].count
             });
@@ -89,12 +96,10 @@ class Home extends Component {
         });
         if (!this.state.posts.length) {
             axios.get("/api/posts?offset=" + this.state.offset).then(resp => {
-                console.log(resp.data);
                 for (let i = 2; i < resp.data.length; i += 3) {
                     resp.data.splice(i, 0, { type: "ad", title: "Ad" });
                 }
-                console.log(resp.data);
-                this.setState({ posts: resp.data });
+                this.setState({ posts: resp.data, loading: false });
             });
         }
     }
@@ -113,11 +118,44 @@ class Home extends Component {
 
     handleSearchEnter() {
         axios.get("/api/posts?q=" + this.state.searchTerm).then(resp => {
+            resp.data = resp.data.filter(value => {
+                if (value.category !== "relationship") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
             this.setState({ posts: resp.data });
         });
     }
 
+    handleTagClick(q) {
+        window.scrollTo(0, 0);
+        axios.get("/api/posts?q=" + q).then(resp => {
+            resp.data = resp.data.filter(value => {
+                if (value.category !== "relationship") {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+
+            resp.data.splice(1, 0, { type: "ad", title: "Ad" });
+
+            this.setState({ posts: resp.data });
+        });
+    }
+
+    sendEvent = event => {
+        ReactGA.event({
+            category: "button click",
+            action: "click",
+            label: "next page button clicked"
+        });
+    };
+
     loadMore() {
+        this.sendEvent();
         this.setState(
             prevProps => {
                 return {
@@ -152,6 +190,10 @@ class Home extends Component {
         );
     }
 
+    handleLogout = () => {
+        axios.post("/api/logout");
+    };
+
     render() {
         var postsToRender = this.state.posts.map((value, i) => {
             if (value.type === "twitter") {
@@ -165,9 +207,11 @@ class Home extends Component {
                         creation_date={value.creation_date}
                         category={value.category}
                         time={value.time}
+                        moment_date={value.moment_date}
                     >
                         <div className="media-wrapper">
-                            <TwitterTweetEmbed tweetId={value.url} />
+                            {/* <TwitterTweetEmbed tweetId={value.url} /> */}
+                            <TweetEmbed id={value.url} />
                         </div>
                     </Container>
                 );
@@ -182,6 +226,7 @@ class Home extends Component {
                         creation_date={value.creation_date}
                         category={value.category}
                         time={value.time}
+                        moment_date={value.moment_date}
                     >
                         <Link to={value.url}>
                             {" "}
@@ -206,8 +251,13 @@ class Home extends Component {
                         creation_date={value.creation_date}
                         category={value.category}
                         time={value.time}
+                        youtubeContainer={true}
+                        moment_date={value.moment_date}
                     >
-                        <div className="media-wrapper">
+                        <div
+                            style={{ maxWidth: "700px" }}
+                            className="media-wrapper"
+                        >
                             <YouTube
                                 videoId={value.url}
                                 opts={{ suggestedQuality: "small" }}
@@ -226,6 +276,7 @@ class Home extends Component {
                         creation_date={value.creation_date}
                         category={value.category}
                         time={value.time}
+                        moment_date={value.moment_date}
                     >
                         <div className="media-wrapper">
                             <FacebookProvider
@@ -247,19 +298,46 @@ class Home extends Component {
                         creation_date={value.creation_date}
                         category={value.category}
                         time={value.time}
+                        ad={true}
                     >
-                        <div className="media-wrapper">
-                            <Ad />
-                        </div>
+                        {/* <div className="media-wrapper"> */}
+                        <Ad />
+                        {/* </div> */}
                     </Container>
                 );
-            } else {
+                // } else if (value.type === "news") {
+                //     return (
+                //         <Container
+                //             creation_date={value.creation_date}
+                //             admin={this.state.loggedIn}
+                //             key={i}
+                //             tags={value.tags}
+                //             postId={value.post_id}
+                //             category={value.category}
+                //             time={value.time}
+                //             title={value.title}
+                //             news={true}
+                //             moment_date={value.moment_date}
+                //         >
+                //             <NewsCard
+                //                 time={value.time}
+                //                 creation_date={value.creation_date}
+                //                 title={value.title}
+                //                 description={value.description}
+                //                 image={value.url}
+                //                 // day={value.creation_date.split("/")[1]}
+                //                 // month={value.creation_date.split("/")[0]}
+                //             />
+                //         </Container>
+                //     );
+                // } else {
                 return null;
             }
         });
 
         return (
             <div>
+                {/* <Ad width={500} height={500} /> */}
                 <Navbar
                     handleSearchTerm={this.handleSearchTerm}
                     handleSearchEnter={this.handleSearchEnter}
@@ -271,35 +349,68 @@ class Home extends Component {
                 >
                     {this.state.loggedIn ? (
                         <div className="new-post-button-container">
+                            <h1
+                                style={{
+                                    fontSize: "25px",
+                                    marginRight: "10px"
+                                }}
+                            >
+                                Admin Controls:
+                            </h1>
                             <Link to="/post">
                                 <button>Create New Post +</button>
                             </Link>
+                            <Link to="/password">
+                                <button
+                                    style={{ backgroundColor: "var(--yellow)" }}
+                                >
+                                    Change Admin Password
+                                </button>
+                            </Link>
+                            <Link to="/">
+                                <button
+                                    onClick={this.handleLogout}
+                                    style={{ backgroundColor: "var(--red)" }}
+                                >
+                                    Logout
+                                </button>
+                            </Link>
                         </div>
                     ) : null}
-                    {this.state.posts.length ? (
+                    {!this.state.loading ? (
                         <div className="postsToRender-container">
-                            {postsToRender}
+                            <div className="home_inner-posts-sidebar-container">
+                                <div className="left-post-container">
+                                    {postsToRender}{" "}
+                                    {this.state.offset >= 8 ? (
+                                        this.state.offset >=
+                                        this.state.count ? (
+                                            <button
+                                                className="return-to-top-button"
+                                                onClick={() =>
+                                                    window.scrollTo(0, 0)
+                                                }
+                                            >
+                                                All Posts Loaded. Return To Top
+                                            </button>
+                                        ) : (
+                                            <button
+                                                onClick={() => this.loadMore()}
+                                                className="next-page-btn"
+                                            >
+                                                Load More<i
+                                                    style={{
+                                                        marginLeft: "5px"
+                                                    }}
+                                                    className="fas fa-arrow-down"
+                                                />
+                                            </button>
+                                        )
+                                    ) : null}
+                                </div>
 
-                            {this.state.offset >= 8 ? (
-                                this.state.offset >= this.state.count ? (
-                                    <button
-                                        className="return-to-top-button"
-                                        onClick={() => window.scrollTo(0, 0)}
-                                    >
-                                        All Posts Loaded Return To Top
-                                    </button>
-                                ) : (
-                                    <button
-                                        onClick={() => this.loadMore()}
-                                        className="next-page-btn"
-                                    >
-                                        Load More<i
-                                            style={{ marginLeft: "5px" }}
-                                            className="fas fa-arrow-down"
-                                        />
-                                    </button>
-                                )
-                            ) : null}
+                                <Sidebar search={this.handleTagClick} />
+                            </div>
                         </div>
                     ) : (
                         <div className="home_loading">Loading...</div>

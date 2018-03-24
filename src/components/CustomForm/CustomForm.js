@@ -3,14 +3,12 @@ import "./CustomForm.css";
 import axios from "axios";
 
 const CustomForm = ({ status, message, onValidated, handleClick }) => {
-    let email, name;
+    let email;
     const submit = () =>
         email &&
-        name &&
         email.value.indexOf("@") > -1 &&
         onValidated({
-            EMAIL: email.value,
-            NAME: name.value
+            EMAIL: email.value
         });
 
     const handleBoth = () => {
@@ -43,12 +41,6 @@ const CustomForm = ({ status, message, onValidated, handleClick }) => {
             <h1 style={{ fontSize: "20px", marginBottom: "20px" }}>
                 Subscribe for daily updates
             </h1>
-            <input
-                style={{ fontSize: "1.1em", padding: 5 }}
-                ref={node => (name = node)}
-                type="text"
-                placeholder="Your name"
-            />
             <br />
             <input
                 style={{ fontSize: "1.1em", padding: 5 }}
