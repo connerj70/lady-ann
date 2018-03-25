@@ -44,9 +44,9 @@
 } */
 
 .pankaata-logo {
-    width: 350px;
-    margin-left: -160px;
-    margin-top: -100px;
+    width: 125px;
+    margin-left: -10px;
+    margin-top: 5px;
 }
 
 .menu-drop {
@@ -58,7 +58,7 @@
 
 .navbar_mobile-dropdown {
     transition: all 0.3s;
-    height: 282px;
+    height: 188px;
     opacity: 1;
 }
 

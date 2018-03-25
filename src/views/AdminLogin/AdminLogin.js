@@ -36,7 +36,7 @@ class AdminLogin extends Component {
         return (
             <div className="admin-login">
                 <div>
-                    <h1>Pankaata Admin Login</h1>
+                    <h1>Lady Ann. Admin Login</h1>
                     <input
                         name="username"
                         onChange={e => this.handleChange(e)}

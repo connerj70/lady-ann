@@ -19,6 +19,7 @@
     cursor: pointer;
     transition: all 0.4s ease-out;
     box-shadow: 1px 1px 8px #d3d3d3;
+    min-width: 300px;
 }
 
 .sidebar_tag:hover {
@@ -45,15 +46,20 @@
 @media (min-width: 880px) {
     .sidebar {
         overflow-x: hidden;
-        width: 40%;
+        width: 45%;
         height: 90vh;
+        position: -webkit-sticky;
         position: sticky;
         top: 20px;
         border-radius: 5px;
         margin-top: 20px;
-        max-width: 300px;
+        max-width: 410px;
         margin-bottom: 10px;
         display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .sidebar_ad-container {
