@@ -191,8 +191,9 @@ class Home extends Component {
     }
 
     handleLogout = () => {
-        axios.post("/api/logout");
-        this.props.history.push("/");
+        axios.post("/api/logout").then(resp => {
+            console.log(resp);
+        });
     };
 
     render() {
@@ -368,7 +369,7 @@ class Home extends Component {
                                     Change Admin Password
                                 </button>
                             </Link>
-                            <Link to="/">
+                            <Link to="/relationships/videos">
                                 <button
                                     onClick={this.handleLogout}
                                     style={{ backgroundColor: "var(--red)" }}

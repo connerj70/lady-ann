@@ -31,6 +31,7 @@ app.use((req, res, next) => initialSession(req, res, next));
 //ADMIN ENDPOINTS
 
 app.post("/api/logout", function(req, res) {
+    console.log(req.session);
     req.session.destroy();
     res.status(200).send("Log out");
 });

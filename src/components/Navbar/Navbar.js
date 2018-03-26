@@ -19,7 +19,7 @@ class Navbar extends Component {
             hideBtn: false,
             title: "Notifications set",
             options: {
-                body: "You will receive notifications from  pankaata.com"
+                body: "You will receive notifications from  ladyann.com"
             },
             modal: false,
             notifications: false

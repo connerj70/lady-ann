@@ -3,13 +3,16 @@
     font-size: 12px;
     padding: 5px 10px;
     height: 150px;
+    max-width: 700px;
+    box-sizing: border-box;
 }
 
 .publish-btn-container {
-    margin-top: 10px;
     display: flex;
     justify-content: flex-end;
-    padding: 5px 40px;
+    padding: 5px 20px;
+    max-width: 700px;
+    margin: 10px auto;
 }
 
 .publish-btn {
