@@ -43,7 +43,7 @@ class Sidebar extends Component {
                 <Link to="/relationships/videos">
                     <div>
                         <div
-                            style={{ backgroundColor: "var(--red)" }}
+                            style={{ backgroundColor: "#333333" }}
                             className={
                                 window.location.hash ===
                                 "#/relationships/videos"
@@ -61,7 +61,9 @@ class Sidebar extends Component {
                 <Link to="/relationships/letters">
                     <div>
                         <div
-                            style={{ backgroundColor: "var(--yellow)" }}
+                            style={{
+                                backgroundColor: "var(--secondary-highlights)"
+                            }}
                             className={
                                 window.location.hash ===
                                 "#/relationships/letters"
@@ -79,7 +81,7 @@ class Sidebar extends Component {
                 <Link to="/relationships/email">
                     <div>
                         <div
-                            style={{ backgroundColor: "var(--blue)" }}
+                            style={{ backgroundColor: "#333333" }}
                             className={
                                 window.location.hash === "#/relationships/email"
                                     ? "sidebar_color active"
@@ -96,7 +98,9 @@ class Sidebar extends Component {
                 <Link to="/relationships/about">
                     <div>
                         <div
-                            style={{ backgroundColor: "var(--light-brown)" }}
+                            style={{
+                                backgroundColor: "var(--secondary-highlights)"
+                            }}
                             className={
                                 window.location.hash === "#/relationships/about"
                                     ? "sidebar_color active"

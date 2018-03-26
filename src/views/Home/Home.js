@@ -192,6 +192,7 @@ class Home extends Component {
 
     handleLogout = () => {
         axios.post("/api/logout");
+        this.props.history.push("/");
     };
 
     render() {

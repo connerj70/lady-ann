@@ -8,8 +8,7 @@ class Footer extends Component {
                 <div className="footer_inner-container">
                     <h2>About Us</h2>
                     <ul>
-                        <li>About Lady Ann</li>
-                        <li>Careers</li>
+                        <li>About Lady Ann.</li>
                         <li>Contact Us</li>
                     </ul>
                 </div>
@@ -28,7 +27,7 @@ class Footer extends Component {
                         <li>Tel: + 1 443 902 3860</li>
                     </ul>
                     <ul>
-                        <li>Email: info@pankaata.com</li>
+                        <li>Email: info@officialladyann.com</li>
                     </ul>
                 </div>
                 <div className="footer_inner-container final-container">
@@ -60,7 +59,7 @@ class Footer extends Component {
                             </a>
                         </div>
                         <div className="footer-link">
-                            <a href="https://twitter.com/PankaataI">
+                            <a href="https://twitter.com/officialladyann">
                                 <i className="fab fa-twitter" />
                             </a>
                         </div>

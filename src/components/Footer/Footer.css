@@ -45,8 +45,12 @@
 }
 
 .footer_links-container {
+    width: 50%;
     margin-top: 10px;
+    margin: 25px auto;
+    display: -ms-flexbox;
     display: flex;
+    justify-content: space-around;
 }
 
 .footer-link {
