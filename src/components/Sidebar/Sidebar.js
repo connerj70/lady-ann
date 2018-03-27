@@ -45,10 +45,10 @@ class Sidebar extends Component {
                         <div
                             style={{ backgroundColor: "#333333" }}
                             className={
-                                window.location.hash ===
-                                "#/relationships/videos"
-                                    ? "sidebar_color active"
-                                    : "sidebar_color"
+                                // window.location.hash ===
+                                // "#/relationships/videos"
+                                //     ? "sidebar_color active"
+                                "sidebar_color"
                             }
                         />
                         <div className="sidebar_tag">

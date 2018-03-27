@@ -8,6 +8,7 @@ import Email from "./Email/Email";
 import About from "./About/About";
 import LetterDetailsUser from "./LetterDetailsUser/LetterDetailsUser";
 import axios from "axios";
+import Home from "../Home/Home";
 
 class Relationships extends Component {
     constructor(props) {

@@ -17,6 +17,7 @@
     width: 100%;
     font-size: 18px;
     max-width: 1100px;
+    margin: 0 auto;
 }
 
 .secondary-nav_search-open-div {
