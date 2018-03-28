@@ -16,7 +16,6 @@ class Email extends Component {
 
     componentDidMount() {
         axios.get("/api-lady-ann-save").then(resp => {
-            console.log("GET", resp);
             this.setState({
                 subject: resp.data.subject,
                 from: resp.data.from,
@@ -31,9 +30,7 @@ class Email extends Component {
                         subject: this.state.subject,
                         situation: this.state.situation
                     })
-                    .then(resp => {
-                        console.log(resp);
-                    });
+                    .then(resp => {});
             }, 10000)
         });
     }
@@ -46,12 +43,9 @@ class Email extends Component {
         let value = e.target.value;
         let name = e.target.name;
 
-        this.setState(
-            {
-                [name]: value
-            },
-            () => console.log(this.state)
-        );
+        this.setState({
+            [name]: value
+        });
     }
 
     handleCheckbox() {

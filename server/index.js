@@ -32,7 +32,6 @@ app.use((req, res, next) => initialSession(req, res, next));
 //ADMIN ENDPOINTS
 
 app.post("/api/logout", function(req, res) {
-    console.log(req.session);
     req.session.destroy();
     res.status(200).send("Log out");
 });
@@ -268,7 +267,6 @@ app.get("/api/lady/letter/:id", function(req, res) {
 
 app.delete("/api/letter/:id", function(req, res) {
     const db = req.app.get("db");
-    console.log(req.params.id);
     db.delete_response([req.params.id]).then(resp => {
         db.delete_letter([req.params.id]).then(resp => {
             res.status(200).send(resp);

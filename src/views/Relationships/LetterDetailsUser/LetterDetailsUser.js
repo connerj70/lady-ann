@@ -20,7 +20,6 @@ class componentName extends Component {
         axios
             .get("/api/lady/letter/" + this.props.match.params.id)
             .then(resp => {
-                console.log(resp);
                 const {
                     subject,
                     situation,

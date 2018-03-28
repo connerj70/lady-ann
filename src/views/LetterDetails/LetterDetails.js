@@ -21,7 +21,6 @@ class LetterDetails extends Component {
         axios
             .get("/api/lady/letter/" + this.props.match.params.id)
             .then(resp => {
-                console.log("LETTER", resp);
                 this.setState({
                     subject: resp.data.subject,
                     situation: resp.data.situation,
@@ -31,7 +30,6 @@ class LetterDetails extends Component {
                 });
             });
         axios.get("/api/admin").then(resp => {
-            console.log(resp);
             this.setState({
                 loggedIn: resp.data
             });

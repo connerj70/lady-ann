@@ -191,9 +191,7 @@ class Home extends Component {
     }
 
     handleLogout = () => {
-        axios.post("/api/logout").then(resp => {
-            console.log(resp);
-        });
+        axios.post("/api/logout").then(resp => {});
     };
 
     render() {

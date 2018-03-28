@@ -21,7 +21,6 @@ class AdminLetters extends Component {
             });
         });
         axios.get("/api/admin").then(resp => {
-            console.log(resp);
             this.setState({
                 loggedIn: resp.data
             });
@@ -29,12 +28,9 @@ class AdminLetters extends Component {
     }
 
     deleteLetter(letterId) {
-        console.log("delete");
-        console.log(letterId);
         var x = window.confirm("Are you sure you want to delete?");
         if (x) {
             axios.delete("/api/letter/" + letterId).then(resp => {
-                console.log(resp);
                 toast.error("Letter deleted.");
             });
         }
@@ -42,7 +38,6 @@ class AdminLetters extends Component {
 
     render() {
         let lettersToDisplay = this.state.letters.map((val, i) => {
-            console.log(val.letter_id);
             return (
                 <div key={i}>
                     <Link to={"/admin/letter/" + val.letter_id}>
