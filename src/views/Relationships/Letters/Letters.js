@@ -3,6 +3,7 @@ import "./Letters.css";
 import Letter from "../../../components/Letter/Letter";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Sidebar from "../../../components/Sidebar/Sidebar";
 
 class Letters extends Component {
     constructor(props) {
@@ -31,7 +32,21 @@ class Letters extends Component {
             );
         });
 
-        return <div className="user-letter-wrapper">{lettersToShow}</div>;
+        return (
+            <div className="user-letter-wrapper">
+                <div className="home_inner-posts-sidebar-container">
+                    <div className="left-post-container">
+                        <div className="letter-page-header">
+                            <h1>Letters</h1>
+                        </div>
+                        <div className="user-letter-container">
+                            {lettersToShow}
+                        </div>
+                    </div>
+                    <Sidebar search={this.handleTagClick} />
+                </div>
+            </div>
+        );
     }
 }
 

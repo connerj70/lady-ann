@@ -26,7 +26,7 @@ class Relationships extends Component {
     render() {
         return (
             <div>
-                <Navbar ladyAnn={true} />
+                <Navbar secondaryNav={true} />
                 {this.state.loggedIn ? (
                     <div>
                         <Link to="/admin/letters">
