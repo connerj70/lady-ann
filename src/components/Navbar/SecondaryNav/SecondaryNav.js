@@ -53,12 +53,18 @@ class SecondaryNav extends Component {
                             </div>
                             <div>
                                 <div
-                                    style={{ marginRight: "10px" }}
+                                    style={{
+                                        marginRight: "10px",
+                                        cursor: "pointer"
+                                    }}
                                     onClick={() => this.handleSearchClear()}
                                 >
                                     Clear
                                 </div>
-                                <div onClick={() => this.handleSearchOpen()}>
+                                <div
+                                    style={{ cursor: "pointer" }}
+                                    onClick={() => this.handleSearchOpen()}
+                                >
                                     x
                                 </div>
                             </div>

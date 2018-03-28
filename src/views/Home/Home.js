@@ -111,20 +111,18 @@ class Home extends Component {
     }
 
     handleSearchTerm(e) {
-        this.setState({
-            searchTerm: e
-        });
+        this.setState(
+            {
+                searchTerm: e
+            },
+            () => console.log(this.state.searchTerm)
+        );
     }
 
     handleSearchEnter() {
         axios.get("/api/posts?q=" + this.state.searchTerm).then(resp => {
-            resp.data = resp.data.filter(value => {
-                if (value.category !== "relationship") {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
+            console.log(resp);
+
             this.setState({ posts: resp.data });
         });
     }

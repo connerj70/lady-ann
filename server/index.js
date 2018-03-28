@@ -121,7 +121,9 @@ app.get("/api/posts", function(req, res) {
     const db = req.app.get("db");
     const offset = req.query.offset;
     if (req.query.q) {
+        console.log(req.query.q);
         db.search_posts([req.query.q]).then(resp => {
+            console.log(resp);
             res.status(200).send(resp);
         });
     } else {
