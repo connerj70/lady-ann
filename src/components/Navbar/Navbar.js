@@ -166,7 +166,7 @@ class Navbar extends Component {
 
                                 <li
                                     onClick={() => this.handleBellClick()}
-                                    style={{ color: "var(--yellow)" }}
+                                    style={{ color: "#ea8b88" }}
                                     className="navbar_dropdown"
                                 >
                                     <i className="fas fa-bell" />

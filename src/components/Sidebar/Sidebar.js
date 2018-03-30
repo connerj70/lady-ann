@@ -9,15 +9,15 @@ class Sidebar extends Component {
         super(props);
         this.state = { tags: [] };
     }
-    componentDidMount() {
-        axios.get("/api/tags").then(resp => {
-            this.setState({
-                tags: resp.data.sort((a, b) => {
-                    return b.count - a.count;
-                })
-            });
-        });
-    }
+    // componentDidMount() {
+    //     axios.get("/api/tags").then(resp => {
+    //         this.setState({
+    //             tags: resp.data.sort((a, b) => {
+    //                 return b.count - a.count;
+    //             })
+    //         });
+    //     });
+    // }
 
     render() {
         // let tagsToRender = this.state.tags.map((value, i) => {

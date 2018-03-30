@@ -1,102 +1,54 @@
 .footer-wrapper {
-    min-height: 70px;
-    width: 100%;
+    min-height: 40px;
+    background-color: var(--navbar-background);
+    color: var(--yellow);
+    padding: 30px;
+}
+
+.footer-logo {
+    width: 400px;
+    margin-top: -130px;
+    border-bottom: 1px solid #d3d3d32d;
     position: relative;
-    bottom: 0px;
-    background: url("../../assets/drum-footer.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px;
-    color: #b9b9b9;
 }
 
-.footer_inner-container {
+.footer_social-container {
+    color: var(--body-background);
+    width: 100px;
     display: flex;
-    font-size: 11px;
-    width: 100%;
+    justify-content: space-between;
+    margin: 40px auto;
+}
+
+.footer_links-container ul {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
-}
-
-.footer_inner-container h2 {
-    color: var(--blue);
-}
-
-.footer_inner-container ul {
-    display: flex;
-    justify-content: space-around;
-    flex-grow: 1.5;
-    margin-left: 10px;
-    align-items: center;
-}
-
-.final-container {
-    flex-direction: column;
-}
-
-.footer_paragraph {
-    line-height: 1.3rem;
-    text-align: left;
-}
-
-.footer_privacy-and-terms-div {
-    margin-top: 10px;
-}
-
-.footer_links-container {
-    width: 50%;
-    margin-top: 10px;
-    margin: 25px auto;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-around;
-}
-
-.footer-link {
-    margin-right: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    margin-bottom: 0;
     font-size: 12px;
 }
 
-@media (min-width: 800px) {
-    .footer-wrapper {
-        display: flex;
-        flex-direction: row;
-        padding: 40px 100px;
-    }
+.footer_links-container ul li {
+    cursor: pointer;
+}
 
-    .footer_inner-container {
+@media (max-width: 700px) {
+    .footer_links-container ul {
         flex-direction: column;
-        align-items: left;
-    }
-
-    .footer_inner-container h2 {
-        color: var(--blue);
-        width: 60px;
-        text-align: left;
-    }
-
-    .footer_inner-container ul {
-        margin: 0;
-        align-items: center;
-        flex-direction: column;
-        justify-content: flex-start;
         margin-top: 10px;
     }
 
-    .footer_inner-container ul li {
+    .footer_links-container ul li {
         margin-top: 10px;
-        width: 100%;
-        text-align: left;
     }
+}
 
-    .footer_privacy-and-terms {
-        display: flex !important;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .final-container {
-        min-width: 300px;
+@media (max-width: 450px) {
+    .footer-logo {
+        width: 250px;
+        margin-top: -130px;
+        border-bottom: 1px solid #d3d3d32d;
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Email.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import banner from "../../../assets/la banner-EDIT.png";
 
 class Email extends Component {
     constructor(props) {
@@ -75,6 +76,7 @@ class Email extends Component {
     render() {
         return (
             <div className="lady-ann-email">
+                <img style={{ width: "90%", margin: "0 auto" }} src={banner} />
                 <h3 className="lady-ann-to">To: LadyAnn@Pankaata.com</h3>
                 <div className="email_sub-container">
                     <h3>From:</h3>

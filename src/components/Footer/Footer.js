@@ -1,69 +1,61 @@
 import React, { Component } from "react";
 import "./Footer.css";
+import logo from "../../assets/lady-ann-3.svg";
 
 class Footer extends Component {
     render() {
         return (
             <div className="footer-wrapper">
-                <div className="footer_inner-container">
-                    <h2>About Us</h2>
-                    <ul>
-                        <li>About Lady Ann.</li>
-                        <li>Contact Us</li>
-                    </ul>
+                <div className="footer_logo-container">
+                    <img
+                        alt="pankaata logo"
+                        className="footer-logo"
+                        src={logo}
+                        style={{ width: "200px", marginTop: "0px" }}
+                    />
                 </div>
-                <div className="footer_inner-container">
-                    <h2>Information</h2>
-                    <ul>
-                        <li>Adverts</li>
-                        <li>FAQs</li>
-                        <li>Cookie Policy</li>
-                        <li>Privacy Policy</li>
-                    </ul>
+                <div className="footer_social-container">
+                    <a href="https://www.facebook.com/pankaata/?ref=br_rs">
+                        {" "}
+                        <i
+                            style={{
+                                cursor: "pointer",
+                                color: "#ea8b88"
+                            }}
+                            className="fab fa-facebook-f"
+                        />
+                    </a>
+                    <a href="https://twitter.com/pankaata">
+                        <i
+                            style={{
+                                cursor: "pointer",
+                                color: "#ea8b88"
+                            }}
+                            className="fab fa-twitter"
+                        />
+                    </a>
+                    <a href="https://www.instagram.com/pankaata/">
+                        <i
+                            style={{
+                                cursor: "pointer",
+                                color: "#ea8b88"
+                            }}
+                            className="fab fa-instagram"
+                        />
+                    </a>
                 </div>
-                <div className="footer_inner-container">
-                    <h2>Contact Us</h2>
+                <div className="footer_links-container">
                     <ul>
-                        <li>Tel: + 1 443 902 3860</li>
+                        <li style={{ color: "#ea8b88" }}>About Pankaata</li>
+                        <li style={{ color: "#ea8b88" }}>Privacy Policy</li>
+                        <li style={{ color: "#ea8b88" }}>
+                            Communications Preference
+                        </li>
+                        <li style={{ color: "#ea8b88" }}>Terms of Use</li>
+                        <li style={{ color: "#ea8b88" }}>
+                            Place An Advert With Pankaata
+                        </li>
                     </ul>
-                    <ul>
-                        <li>Email: info@officialladyann.com</li>
-                    </ul>
-                </div>
-                <div className="footer_inner-container final-container">
-                    <p className="footer_paragraph">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                    </p>
-                    <div className="footer_privacy-and-terms">
-                        <div className="footer_privacy-and-terms-div">
-                            Pankaata © 2018.
-                        </div>
-                        <div className="footer_privacy-and-terms-div">
-                            Privacy
-                        </div>
-                        <div className="footer_privacy-and-terms-div">
-                            Terms & Conditions
-                        </div>
-                    </div>
-                    <div className="footer_links-container">
-                        <div className="footer-link">
-                            <a href="https://www.facebook.com/pankaata/">
-                                <i className="fab fa-facebook-square" />
-                            </a>
-                        </div>
-                        <div className="footer-link">
-                            <a href="https://www.instagram.com/pankaata/">
-                                <i className="fab fa-instagram" />
-                            </a>
-                        </div>
-                        <div className="footer-link">
-                            <a href="https://twitter.com/officialladyann">
-                                <i className="fab fa-twitter" />
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         );
