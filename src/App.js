@@ -5,6 +5,15 @@ import "./App.css";
 import Loadable from "react-loadable";
 
 //COMPONENTS
+// import AdminLogin from "./views/AdminLogin/AdminLogin";
+// import Relationships from "./views/Relationships/Relationships";
+// import Post from "./views/Post/Post";
+// import EditPost from "./views/EditPost/EditPost";
+// import AdminLetters from "./views/AdminLetters/AdminLetters";
+// import LetterDetails from "./views/LetterDetails/LetterDetails";
+// import FourOhFour from "./views/FourOhFour/FourOhFour";
+import Footer from "./components/Footer/Footer";
+
 const Loading = () => <div>Loading...</div>;
 const Home = Loadable({
     loader: () => import("./views/Home/Home"),
@@ -24,10 +33,6 @@ const Post = Loadable({
 });
 const LetterDetails = Loadable({
     loader: () => import("./views/LetterDetails/LetterDetails"),
-    loading: Loading
-});
-const Footer = Loadable({
-    loader: () => import("./components/Footer/Footer"),
     loading: Loading
 });
 const EditPost = Loadable({
