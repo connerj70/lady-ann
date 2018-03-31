@@ -93,7 +93,7 @@ class Sidebar extends Component {
                         <div className="sidebar_tag">
                             {/* <div>{value.name}</div> */}
                             {/* <div>{value.count}</div> */}
-                            Email
+                            Email Lady. Ann
                         </div>
                     </div>
                 </Link>
@@ -113,7 +113,7 @@ class Sidebar extends Component {
                         <div className="sidebar_tag">
                             {/* <div>{value.name}</div> */}
                             {/* <div>{value.count}</div> */}
-                            About
+                            About Lady. Ann
                         </div>
                     </div>
                 </Link>

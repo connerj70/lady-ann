@@ -37,11 +37,11 @@
 }
 
 .button-container {
-    justify-content: flex-start;
+    margin-top: 50px;
 }
 
 .button-container button {
-    padding: 10px 25px;
+    padding: 20px 25px;
     background-color: #fff;
     border: 1px solid var(--blue);
     color: #333;
@@ -49,11 +49,30 @@
     box-shadow: 2px 3px 3px #d3d3d3;
     font-size: 16px;
     letter-spacing: 3px;
-    transition: all 0.3s;
+    transition: all 0.4s;
     font-weight: 500;
+    width: 100%;
 }
 
 .button-container button:hover {
     background-color: var(--blue);
     color: #fff;
+}
+
+.lady-ann-logo2-container {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lady-ann-logo2 {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 600px) {
+    .lady-ann-logo2 {
+        width: 100px;
+        height: 100px;
+    }
 }

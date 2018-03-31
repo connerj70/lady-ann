@@ -3,6 +3,7 @@ import "./Email.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import banner from "../../../assets/la banner-EDIT.png";
+import logo from "../../../assets/Asset 1.svg";
 
 class Email extends Component {
     constructor(props) {
@@ -76,8 +77,23 @@ class Email extends Component {
     render() {
         return (
             <div className="lady-ann-email">
-                <img style={{ width: "90%", margin: "0 auto" }} src={banner} />
-                <h3 className="lady-ann-to">To: LadyAnn@Pankaata.com</h3>
+                <img
+                    style={{ width: "90%", margin: "20px auto" }}
+                    src={banner}
+                />
+                <div className="lady-ann-logo2-container">
+                    <img className="lady-ann-logo2" src={logo} />
+                </div>
+                {/* <h3 className="lady-ann-to">To: LadyAnn@Pankaata.com</h3> */}
+                <div className="email_sub-container">
+                    <h3>To:</h3>
+                    <input
+                        name="from"
+                        type="text"
+                        placeholder="LadyAnn@Pankaata.com"
+                        disabled
+                    />
+                </div>
                 <div className="email_sub-container">
                     <h3>From:</h3>
                     <input
@@ -85,6 +101,7 @@ class Email extends Component {
                         name="from"
                         onChange={e => this.handleChange(e)}
                         type="text"
+                        placeholder="Johndoe@gmail.com"
                     />
                 </div>
                 <div className="email_sub-container">
@@ -94,6 +111,7 @@ class Email extends Component {
                         name="subject"
                         onChange={e => this.handleChange(e)}
                         type="text"
+                        placeholder="Hi Lady Ann."
                     />
                 </div>
                 <div className="email_sub-container">
@@ -110,7 +128,11 @@ class Email extends Component {
                 <div className="email_sub-container">
                     <h3>Dear Lady. Ann, please keep me anonymous</h3>
                     <input
-                        style={{ width: "auto" }}
+                        style={{
+                            width: "30px",
+                            height: "30px",
+                            marginTop: "5px"
+                        }}
                         onChange={() => this.handleCheckbox()}
                         type="checkbox"
                     />

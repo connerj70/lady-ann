@@ -18,9 +18,20 @@
 }
 
 .banner-image {
-    max-width: 700px;
-    width: 60%;
+    max-width: 800px;
+    width: 65%;
     margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .banner-image {
+        width: 90%;
+    }
+
+    .letter-page-header {
+        height: 60px;
+        margin-top: 50px;
+    }
 }
 
 @keyframes slide-down {
