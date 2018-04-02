@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Lora");
 
+@font-face {
+    font-family: "Marat";
+    src: url("./fonts/MaratPro-Regular.otf");
+}
+
+@font-face {
+    font-family: "Kievit";
+    src: url("./fonts/Kievit_Bold.ttf");
+}
+
 html,
 body {
     width: 100%;
@@ -51,4 +61,38 @@ a {
 
 button:hover {
     cursor: pointer;
+}
+
+input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-family: "Marat";
+}
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Marat";
+}
+input:-ms-input-placeholder {
+    /* IE 10+ */
+    font-family: "Marat";
+}
+input:-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Marat";
+}
+
+textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-family: "Marat";
+}
+textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Marat";
+}
+textarea:-ms-input-placeholder {
+    /* IE 10+ */
+    font-family: "Marat";
+}
+textarea:-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Marat";
 }

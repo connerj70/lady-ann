@@ -25,7 +25,7 @@ class Footer extends Component {
                             className="fab fa-facebook-f"
                         />
                     </a>
-                    <a href="https://twitter.com/pankaata">
+                    <a href="https://twitter.com/officialladyann">
                         <i
                             style={{
                                 cursor: "pointer",
@@ -34,7 +34,7 @@ class Footer extends Component {
                             className="fab fa-twitter"
                         />
                     </a>
-                    <a href="https://www.instagram.com/pankaata/">
+                    <a href="https://www.instagram.com/officialladyann/">
                         <i
                             style={{
                                 cursor: "pointer",
