@@ -35,12 +35,12 @@ class Letters extends Component {
 
         return (
             <div className="user-letter-wrapper">
-                <div className="letter-page-header">
-                    <img className="banner-image" src={banner} />
-                </div>
                 <div className="home_inner-posts-sidebar-container">
                     <div className="left-post-container">
                         <div className="user-letter-container">
+                            <div className="letter-page-header">
+                                <img className="banner-image" src={banner} />
+                            </div>
                             {lettersToShow}
                         </div>
                     </div>
