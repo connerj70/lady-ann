@@ -153,6 +153,11 @@ class Navbar extends Component {
                                 <Link to="/relationships/letters">
                                     <li className="navbar_dropdown">Letters</li>
                                 </Link>
+                                <Link to="/relationships/goals">
+                                    <li className="navbar_dropdown">
+                                        Relationship Goals
+                                    </li>
+                                </Link>
                                 <Link to="/relationships/email">
                                     <li className="navbar_dropdown">
                                         Email Lady. Ann
@@ -223,6 +228,11 @@ class Navbar extends Component {
                         </Link>
                         <Link to="/relationships/letters">
                             <li className="navbar_dropdown">Letters</li>
+                        </Link>
+                        <Link to="/relationships/goals">
+                            <li className="navbar_dropdown">
+                                Relationship Goals
+                            </li>
                         </Link>
                         <Link to="/relationships/email">
                             <li className="navbar_dropdown">Email Lady. Ann</li>

@@ -59,10 +59,12 @@
 }
 
 .post button {
-    padding: 10px 20px;
-    background-color: var(--navbar-background);
+    padding: 20px 20px;
+    background-color: #ea8b88;
     color: #fff;
     border: none;
-    margin-top: 20px;
+    margin-top: 50px;
     border-radius: 5px;
+    width: 90%;
+    font-size: 16px;
 }

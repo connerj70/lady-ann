@@ -55,7 +55,6 @@ class Container extends Component {
                 {/* <div className="tags-container">{tagsToRender}</div> */}
                 {!this.props.ad ? (
                     <div className="share-container">
-                        <h5>Share this post:</h5>
                         <div className="share-button-container">
                             <FacebookShareButton
                                 quote={`Look what I found on pankaata.com ${

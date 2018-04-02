@@ -9,6 +9,7 @@ import About from "./About/About";
 import LetterDetailsUser from "./LetterDetailsUser/LetterDetailsUser";
 import axios from "axios";
 import Home from "../Home/Home";
+import Goals from "./Goals/Goals";
 
 class Relationships extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class Relationships extends Component {
                 />
                 <Route path={"/relationships/email"} component={Email} />
                 <Route path={"/relationships/about"} component={About} />
+                <Route path={"/relationships/goals"} component={Goals} />
             </div>
         );
     }

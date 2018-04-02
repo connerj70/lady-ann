@@ -79,10 +79,33 @@ class Sidebar extends Component {
                         </div>
                     </div>
                 </Link>
+                <Link to="/relationships/goals">
+                    <div>
+                        <div
+                            style={{
+                                backgroundColor: "#333333"
+                            }}
+                            className={
+                                // window.location.hash ===
+                                // "#/relationships/letters"
+                                //     ? "sidebar_color active"
+                                //     : "sidebar_color"
+                                "sidebar_color"
+                            }
+                        />
+                        <div className="sidebar_tag">
+                            {/* <div>{value.name}</div> */}
+                            {/* <div>{value.count}</div> */}
+                            Relationship Goals
+                        </div>
+                    </div>
+                </Link>
                 <Link to="/relationships/email">
                     <div>
                         <div
-                            style={{ backgroundColor: "#333333" }}
+                            style={{
+                                backgroundColor: "var(--secondary-highlights)"
+                            }}
                             className={
                                 // window.location.hash === "#/relationships/email"
                                 //     ? "sidebar_color active"
@@ -101,7 +124,7 @@ class Sidebar extends Component {
                     <div>
                         <div
                             style={{
-                                backgroundColor: "var(--secondary-highlights)"
+                                backgroundColor: "#333333"
                             }}
                             className={
                                 // window.location.hash === "#/relationships/about"
@@ -119,6 +142,7 @@ class Sidebar extends Component {
                 </Link>
 
                 <div className="sidebar_ad-container">
+                    <Ad />
                     <Ad />
                 </div>
             </div>
