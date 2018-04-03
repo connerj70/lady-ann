@@ -64,5 +64,12 @@
 
     .sidebar_ad-container {
         margin-top: 55px;
+        width: 100%;
+    }
+
+    .sidebar_ad-container div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

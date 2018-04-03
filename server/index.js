@@ -121,9 +121,7 @@ app.get("/api/posts", function(req, res) {
     const db = req.app.get("db");
     const offset = req.query.offset;
     if (req.query.q) {
-        console.log(req.query.q);
         db.search_posts([req.query.q]).then(resp => {
-            console.log(resp);
             res.status(200).send(resp);
         });
     } else {
@@ -159,10 +157,8 @@ app.get("/api/posts/:category", function(req, res) {
 });
 
 app.get("/api/novideo", function(req, res) {
-    console.log("HIT");
     const db = req.app.get("db");
     db.get_non_video_posts().then(resp => {
-        console.log(resp);
         res.status(200).send(resp);
     });
 });
