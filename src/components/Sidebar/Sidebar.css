@@ -19,7 +19,7 @@
     cursor: pointer;
     transition: all 0.4s ease-out;
     box-shadow: 1px 1px 8px #d3d3d3;
-    width: 336px;
+    width: 300px;
 }
 
 .sidebar_tag:hover {
