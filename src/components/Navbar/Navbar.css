@@ -79,7 +79,7 @@
 }
 
 .subscribe-update-btn {
-    position: fixed;
+    position: absolute;
     top: 19px;
     right: 100px;
     background-color: #ea8b88;

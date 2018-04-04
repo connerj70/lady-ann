@@ -46,14 +46,14 @@ class Footer extends Component {
                 </div>
                 <div className="footer_links-container">
                     <ul>
-                        <li style={{ color: "#ea8b88" }}>About Lady Ann.</li>
+                        <li style={{ color: "#ea8b88" }}>About Lady. Ann</li>
                         <li style={{ color: "#ea8b88" }}>Privacy Policy</li>
                         <li style={{ color: "#ea8b88" }}>
                             Communications Preference
                         </li>
                         <li style={{ color: "#ea8b88" }}>Terms of Use</li>
                         <li style={{ color: "#ea8b88" }}>
-                            Place An Advert With Lady Ann.
+                            Place An Advert With Lady. Ann
                         </li>
                     </ul>
                 </div>

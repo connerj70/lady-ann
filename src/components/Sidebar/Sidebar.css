@@ -45,7 +45,8 @@
 
 @media (min-width: 880px) {
     .sidebar {
-        overflow-x: hidden;
+        overflow-x: visible;
+        overflow-y: scroll;
         width: 45%;
         height: 90vh;
         position: -webkit-sticky;
