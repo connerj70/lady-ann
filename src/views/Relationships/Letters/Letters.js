@@ -21,6 +21,7 @@ class Letters extends Component {
     }
 
     render() {
+        console.log(this.props);
         let lettersToShow = this.state.letters.map((value, i) => {
             return (
                 <Link key={i} to={"/relationships/letter/" + value.letter_id}>
