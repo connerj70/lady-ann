@@ -80,8 +80,8 @@
 
 .subscribe-update-btn {
     position: fixed;
-    bottom: 10%;
-    right: 14%;
+    top: 19px;
+    right: 100px;
     background-color: #ea8b88;
     color: #fff;
     border-radius: 5px;
