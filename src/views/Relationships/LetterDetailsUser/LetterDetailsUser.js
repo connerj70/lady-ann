@@ -17,6 +17,7 @@ class componentName extends Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         axios
             .get("/api/lady/letter/" + this.props.match.params.id)
             .then(resp => {
