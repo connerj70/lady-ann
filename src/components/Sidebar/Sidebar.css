@@ -1,6 +1,6 @@
 .sidebar {
     display: none;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     color: #788289;
     padding-top: 30px;
     margin-left: 40px;
@@ -45,13 +45,13 @@
 
 @media (min-width: 880px) {
     .sidebar {
-        overflow-x: visible;
-        overflow-y: scroll;
+        /* overflow-x: visible;
+        overflow-y: scroll; */
         width: 45%;
         height: 90vh;
         position: -webkit-sticky;
-        position: sticky;
-        top: 20px;
+        /* position: sticky; */
+        /* top: -250px; */
         border-radius: 5px;
         margin-top: 20px;
         max-width: 410px;
